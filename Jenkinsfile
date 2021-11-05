@@ -4,12 +4,13 @@ pipeline {
 	stages {
 		stage ('Build') {
 			steps {
-				sh './gradlew build'
+				git 'https://github.com/Seihran/Assignment1b.git'
+				bat './gradlew build'
 			}
 		}
 		stage ('Test') {
 			steps {
-				sh './gradlew check'
+				bat './gradlew check'
 			}
 		}
 		post{
